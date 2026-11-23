@@ -9,7 +9,7 @@ import WebsiteEditor from './pages/Editor'
 import LiveSite from './pages/LiveSite'
 import Pricing from './pages/Pricing'
 
-export const serverUrl=import.meta.env.MODE === "production" ? "https://zeus-ai-m8yp.onrender.com" : "http://localhost:8000"
+export const serverUrl=(import.meta.env.VITE_SERVER_URL || "http://localhost:8000").replace(/\/$/, "")
 function App() {
   useGetCurrentUser()
   const {userData}=useSelector(state=>state.user)
